@@ -1,0 +1,28 @@
+# Production profile. Activate with SPRING_PROFILES_ACTIVE=postgres.
+# Everything here is read from environment variables set on your hosting
+# platform - nothing is hardcoded. See README.md "Deployment" section.
+
+spring:
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: false
+
+app:
+  jwt:
+    secret: ${APP_JWT_SECRET}
+    expiration-ms: 86400000
+  storage:
+    base-path: ${APP_STORAGE_PATH:/var/data/storage}
+  cors:
+    allowed-origins: ${APP_CORS_ALLOWED_ORIGINS}
+  public-link:
+    base-url: ${APP_PUBLIC_LINK_BASE_URL}
