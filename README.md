@@ -8,7 +8,7 @@ and an Admin role with full platform oversight.
 ## 🔗 Live Demo
 
 - **App:** https://cloud-storage-app-sigma.vercel.app
-- **API:** https://cloud-storage-app-o6l9.onrender.com
+
 
 **Demo admin login** (auto-created on first backend startup — full oversight of all users & files):
 ```
